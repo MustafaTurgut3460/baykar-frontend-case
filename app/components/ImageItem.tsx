@@ -17,7 +17,7 @@ const ImageItem: React.FC<ItemProps> = ({
 }) => {
   return (
     <div
-      className={`flex items-center space-x-2 p-4 cursor-pointer w-fit rounded-lg transition-all duration-300 ${
+      className={`flex items-center space-x-2 p-4 cursor-pointer w-fit min-w-fit rounded-lg transition-all duration-300 ${
         itemKey === selectedKey
           ? "bg-white shadow-image-item"
           : "hover:bg-white hover:bg-opacity-50 hover:shadow-image-item"
@@ -26,7 +26,7 @@ const ImageItem: React.FC<ItemProps> = ({
     >
       <img src={`icons/${icon}.svg`} alt="" />
       <p className="font-medium">{label}</p>
-      {itemKey === selectedKey && <img src="icons/arrow-right.svg" alt="" />}
+      {itemKey === selectedKey && <img src="icons/arrow-right.svg" alt="" className="hidden lg:block"/>}
     </div>
   );
 };
